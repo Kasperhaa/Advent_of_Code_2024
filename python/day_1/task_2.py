@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def solve(file_path: str) -> int:
-    df: pd.DataFrame  = pd.read_csv(file_path, header=None)
+    df: pd.DataFrame  = pd.read_csv(file_path, header=None, delimiter="   ", engine="python")
     left:  np.ndarray = df.iloc[:,0].to_numpy()
     right: np.ndarray = df.iloc[:,1].to_numpy()
     sim_dict: dict = {}
