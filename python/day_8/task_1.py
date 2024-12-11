@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 import time
 
-DEBUG = False
+INPUT_FILE_PATH: str = "python/day_8/input.csv"
+DEBUG: bool = False
 
 def solve(file_path: str) -> int:
     result: int = 0
