@@ -21,7 +21,7 @@ def calculate_time(func, *args):
     return result
 
 def main() -> int:
-    result: int = solve(file_path = INPUT_FILE_PATH)
+    result: int = calculate_time(solve, INPUT_FILE_PATH)
     return result
 
 if __name__ == "__main__":

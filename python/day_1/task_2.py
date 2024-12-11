@@ -18,7 +18,7 @@ def solve(file_path: str) -> int:
     
     return result
 
-def calculate_time(func, *args):
+def calculate_time(func, *args) -> int:
     begin = time.time()
     result = func(*args)
     end = time.time()
@@ -27,7 +27,7 @@ def calculate_time(func, *args):
     return result
 
 def main() -> int:
-    result: int = solve(file_path = INPUT_FILE_PATH)
+    result: int = calculate_time(solve, INPUT_FILE_PATH)
     return result
 
 if __name__ == "__main__":

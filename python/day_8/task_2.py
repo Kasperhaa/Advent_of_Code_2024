@@ -30,7 +30,6 @@ def solve(file_path: str) -> int:
             for other_pos in frequency_pos[idx+1:]:
                 difference_direction = np.array([pos - other_pos, other_pos - pos])
                 antinode = np.array([pos, other_pos])
-                print(*zip(antinode, difference_direction))
                 for (x,y), (x_diff, y_diff) in zip(antinode, difference_direction):
                     out_of_bounds = lambda x,y,shape: (x < 0 or y < 0 or x > shape[0] or y > shape[1]) 
                     if DEBUG:
@@ -56,7 +55,7 @@ def solve(file_path: str) -> int:
     result = sum(antinodes_pos.values())
     return result
 
-def calculate_time(func, *args):
+def calculate_time(func, *args) -> int:
     begin = time.time()
     result = func(*args)
     end = time.time()
@@ -65,7 +64,7 @@ def calculate_time(func, *args):
     return result
 
 def main() -> int:
-    result: int = solve(file_path = INPUT_FILE_PATH)
+    result: int = calculate_time(solve, INPUT_FILE_PATH)
     return result
 
 if __name__ == "__main__":
