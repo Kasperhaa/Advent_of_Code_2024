@@ -1,4 +1,9 @@
+import pandas as pd
 import numpy as np
+import time
+
+INPUT_FILE_PATH: str = "python/day_2/input.csv"
+DEBUG: bool = False
 
 def solve(file_path: str) -> int:
     result: int = 0
@@ -27,9 +32,17 @@ def solve(file_path: str) -> int:
     return result
 
 
+def calculate_time(func, *args):
+    begin = time.time()
+    result = func(*args)
+    end = time.time()
+    print(f"completed in : {end - begin:.6f} ms")
+
+    return result
+
 def main() -> int:
-    file = "python/day_2/input.csv"
-    return solve(file_path = file)
+    result: int = solve(file_path = INPUT_FILE_PATH)
+    return result
 
 if __name__ == "__main__":
     result: int = main()

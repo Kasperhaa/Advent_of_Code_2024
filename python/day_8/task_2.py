@@ -65,8 +65,8 @@ def calculate_time(func, *args):
     return result
 
 def main() -> int:
-    file = "python/day_8/input.csv"
-    return calculate_time(solve, file)
+    result: int = solve(file_path = INPUT_FILE_PATH)
+    return result
 
 if __name__ == "__main__":
     result: int = main()
